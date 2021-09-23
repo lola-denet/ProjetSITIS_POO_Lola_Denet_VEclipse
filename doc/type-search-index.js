@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"DataBase"},{"p":"<Unnamed>","l":"Program"},{"p":"<Unnamed>","l":"Query"}];updateSearchResults();
