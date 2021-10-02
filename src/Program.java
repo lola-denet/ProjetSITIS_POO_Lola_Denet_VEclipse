@@ -205,7 +205,7 @@ public class Program {
     public static void showMenu() {
         System.out.println("\n\nBienvenue dans le programme de requêtage du PMSI\n");
         System.out.println("L'URL par défaut est : jdbc:mysql://localhost:3306/bd_projet");
-        System.out.println("L'utilisateur part défaut est : root\n");
+        System.out.println("L'utilisateur par défaut est : root\n");
         System.out.println("Souhaitez-vous changer ces informations ?");
         System.out.println("Taper 1 : oui");
         System.out.println("Taper 2 : non\n");
