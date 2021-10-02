@@ -94,6 +94,8 @@ public class Program {
      * @return Query : Returns the selected query with the parameters.
      */
     public static Query chooseQuery() {
+    	
+    	// Creates queries objects : only a string is required. This string corresponds to the SQL query. Parameters are replaced by "?".
         Query q1 = new Query("SELECT * FROM tab_patient WHERE ID_PATIENT = ?;");
         Query q2 = new Query("SELECT * FROM tab_hospitalisation WHERE ID_PATIENT = ?;");
         Query q3 = new Query(
@@ -104,6 +106,8 @@ public class Program {
         Query q5 = new Query("SELECT tc.ID_CCAM, LIBELLE_CCAM\n"
         		+ "FROM tab_ccam tc INNER JOIN tab_acte ta on tc.ID_CCAM = ta.ID_CCAM \n"
         		+ "WHERE ta.ID_HOSPITALISATION = ?;");
+        
+        // Shows queries menu
         while (true) {
             System.out.println("\nTaper 1 : Afficher les informations d'un patient");
             System.out.println("Taper 2 : Afficher les hospitalisations d'un patient");
@@ -117,7 +121,9 @@ public class Program {
             int intParam;
             int position;
             String stringParam;
-
+            
+            
+            //Get the parameters entered by the user and injects its into the query. The position corresponds to the position of the "?" into the query.
 			switch (answer) {
 				case 1 -> {
 					System.out.println("Entrer l'id du patient (6 chiffres) : ");
