@@ -98,12 +98,20 @@ public class Program {
         Query q2 = new Query("SELECT * FROM tab_hospitalisation WHERE ID_PATIENT = ?;");
         Query q3 = new Query(
                 "SELECT tab_patient.ID_PATIENT FROM tab_patient INNER JOIN tab_hospitalisation ON tab_patient.ID_PATIENT WHERE SEXE = ? AND DATE_ENTREE = ?;");
+        Query q4 = new Query("SELECT ID_CIM10, LIBELLE_CIM110\n"
+        		+ "FROM tab_cim10 tc INNER JOIN tab_diagnostic td on tc.ID_CIM10 = td.CODE_CIM10 INNER JOIN tab_hospitalisation th on td.ID_HOSPITALISATION = th.ID_HOSPITALISATION \n"
+        		+ "WHERE th.ID_HOSPITALISATION = ?;");
+        Query q5 = new Query("SELECT tc.ID_CCAM, LIBELLE_CCAM\n"
+        		+ "FROM tab_ccam tc INNER JOIN tab_acte ta on tc.ID_CCAM = ta.ID_CCAM \n"
+        		+ "WHERE ta.ID_HOSPITALISATION = ?;");
         while (true) {
             System.out.println("\nTaper 1 : Afficher les informations d'un patient");
             System.out.println("Taper 2 : Afficher les hospitalisations d'un patient");
             System.out.println(
-                    "Taper 3 : Afficher les id des patients de sexe féminin ou masculin hospitalisés à une certaine date\n");
-            System.out.println("Taper 0 : quitter le programme");
+                    "Taper 3 : Afficher les id des patients de sexe féminin ou masculin hospitalisés à une certaine date");
+            System.out.println("Taper 4 : Afficher les codes et les libellés des diagnostics réalisés au cours d'une hospitalisation");
+            System.out.println("Taper 5 : Afficher les codes et les libellés des actes réalisés au cours d'une hospitalisation");
+            System.out.println("\nTaper 0 : quitter le programme");
             int answer = integerInput();
 
             int intParam;
@@ -135,6 +143,20 @@ public class Program {
 					position = 2;
 					q3.addStringParameter(position, stringParam);
 					return q3;
+				}
+				case 4 -> {
+					System.out.println("Entrer l'id de l'hospitalisation :");
+					intParam = integerInput();
+					position = 1;
+					q4.addIntParameter(position, intParam);
+					return q4;
+				}
+				case 5 -> {
+					System.out.println("Entrer l'id de l'hospitalisation :");
+					intParam = integerInput();
+					position = 1;
+					q5.addIntParameter(position, intParam);
+					return q5;
 				}
 				case 0 -> {
 					System.out.println("\n Au revoir\n");
