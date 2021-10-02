@@ -19,7 +19,7 @@ From a command line tool :
 - And enjoy
 
 ## Used tools
-- [IntelliJ Idea](https://www.jetbrains.com/fr-fr/idea/)
+- [Eclipse](https://www.eclipse.org)
 - [DBeaver](https://dbeaver.io)
 - [MariaDB](https://mariadb.com)
 - [MySQL connector](https://dev.mysql.com/doc/connector-j/8.0/en/)
