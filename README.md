@@ -2,7 +2,7 @@
 
 The purpose of this programming project is to produce a program in Java allowing the user to connect to the PMSI database and to make queries there.
 
-You can see the documentation by opening [this file](https://github.com/lola-denet/ProjetSITIS_POO_Lola_Denet_VEclipse/blob/3f6c86b84581da971f6f0e5efbbed1078d05bd6a/doc/index.html) on your web navigator.
+You can see the documentation [here](https://lola-denet.github.io/ProjetSITIS_POO_Lola_Denet_VEclipse/).
 
 ## To start
 
