@@ -229,7 +229,7 @@ public class Program {
                 BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
                 String str = buff.readLine();
 				return Integer.parseInt(str);
-            } catch (NumberFormatException monexception) {
+            } catch (NumberFormatException myexception) {
                 System.out.println("Vous devez saisir un nombre");
                 System.out.println("Recomencez");
             } catch (IOException e) {
